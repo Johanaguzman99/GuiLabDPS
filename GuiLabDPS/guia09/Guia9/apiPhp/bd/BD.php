@@ -1,9 +1,9 @@
 <?php
 $pdo=null;
 $host="localhost";
-$user="root";
-$password="";
-$bd="reactapp";
+$user="id14801679_react";
+$password=")It2C~q4rmOlrM]<";
+$bd="id14801679_reactapp";
 
 function conectar(){
     try{

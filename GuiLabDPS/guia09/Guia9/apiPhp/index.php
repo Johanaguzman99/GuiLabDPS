@@ -1,6 +1,6 @@
 <?php
 
-include 'bd/BD.php';
+include 'BD.php';
 
 header('Access-Control-Allow-Origin: *');
 
@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetchAll()); 
     }
-    header("HTTP/1.1 200 OK");
+    //header("HTTP/1.1 200 OK");
     exit();
 }
 
@@ -26,7 +26,7 @@ if($_POST['METHOD']=='POST'){
     $queryAutoIncrement="select MAX(id) as id from tb_productos";
     $resultado=metodoPost($query, $queryAutoIncrement);
     echo json_encode($resultado);
-    header("HTTP/1.1 200 OK");
+    //header("HTTP/1.1 200 OK");
     exit();
 }
 
@@ -38,7 +38,7 @@ if($_POST['METHOD']=='PUT'){
     $query="UPDATE tb_productos SET nombre='$nombre', existencias='$existencias' WHERE id='$id'";
     $resultado=metodoPut($query);
     echo json_encode($resultado);
-    header("HTTP/1.1 200 OK");
+    //header("HTTP/1.1 200 OK");
     exit();
 }
 
@@ -48,11 +48,11 @@ if($_POST['METHOD']=='DELETE'){
     $query="DELETE FROM tb_productos WHERE id='$id'";
     $resultado=metodoDelete($query);
     echo json_encode($resultado);
-    header("HTTP/1.1 200 OK");
+    //header("HTTP/1.1 200 OK");
     exit();
 }
 
-header("HTTP/1.1 400 Bad Request");
+//header("HTTP/1.1 400 Bad Request");
 
 
 ?>

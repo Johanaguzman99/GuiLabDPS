@@ -4,7 +4,7 @@ import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import axios from 'axios';
 
 function App() {
-  const baseUrl = "http://localhost/apiPhp/";
+  const baseUrl = "https://dps-rherrera.000webhostapp.com/Recursos/";
   const [data, setData]= useState([]);
   const [modalInsertar, setModalInsertar]= useState(false);
   const [modalEditar, setModalEditar] = useState(false);
