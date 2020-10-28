@@ -2,7 +2,7 @@
 
 include 'BD.php';
 
-header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Origin: *');
 
 if($_SERVER['REQUEST_METHOD']=='GET'){
     if(isset($_GET['id'])){
