@@ -2,6 +2,7 @@
 import React from "react";
 import Alumno from "./componentes/Alumno";
 import './App.css';
+//import '../node_modules/bootswatch/dist/yeti/bootstrap.css';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

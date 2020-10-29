@@ -5,9 +5,10 @@ import { db } from "../Firebase";
 const AlumnosForm = (props) => {
 
   const initialStateValues = {
+    identificacion: "",
     nombre: "",
     apellido: "",
-    edad: "",
+    cargo: "",
   };
 
   const [values, setValues] = useState(initialStateValues);
@@ -43,6 +44,19 @@ const AlumnosForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit} className="card card-body border-primary">
+        <div className="form-group input-group">
+        <div className="input-group-text bg-light">
+          <i className="material-icons">contact_page</i>
+        </div>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Ingrese Identificación"
+          value={values.identificacion}
+          name="identificacion"
+          onChange={handleInputChange}
+        />
+      </div>
       <div className="form-group input-group">
         <div className="input-group-text bg-light">
           <i className="material-icons">contact_page</i>
@@ -71,13 +85,13 @@ const AlumnosForm = (props) => {
       </div>
       <div className="form-group input-group">
         <div className="input-group-text bg-light">
-          <i className="material-icons">exposure</i>
+          <i className="material-icons">contact_page</i>
         </div>
         <input
           type="text"
-          value={values.edad}
-          name="edad"
-          placeholder="Ingrese edad"
+          value={values.cargo}
+          name="cargo"
+          placeholder="Ingrese el cargo"
           className="form-control"
           onChange={handleInputChange}
         />

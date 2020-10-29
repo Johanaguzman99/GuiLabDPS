@@ -21,7 +21,7 @@ const Alumnos = () => {
   const onDeleteAlumno = async (id) => {
     if (window.confirm("are you sure you want to delete this Alumno?")) {
       await db.collection("Alumnos").doc(id).delete();
-      toast("Se elimino un Alumno", {
+      toast("¡Se eliminó un empleado!", {
         type: "error",
         //autoClose: 2000
       });
@@ -36,12 +36,12 @@ const Alumnos = () => {
     try {
       if (currentId === "") {
         await db.collection("Alumnos").doc().set(AlumnoObject);
-        toast("Se agrego un Alumno", {
+        toast("Se agregó un Empleado", {
           type: "success",
         });
       } else {
         await db.collection("Alumnos").doc(currentId).update(AlumnoObject);
-        toast("Se actualizo un Alumno", {
+        toast("Se actualizó un Empleado", {
           type: "info",
         });
         setCurrentId("");
@@ -60,22 +60,24 @@ const Alumnos = () => {
 
       <div className="col-md-8 p-2">
         <div class="container">
-          <h2>Lista Alumnos</h2>
+          <h2>Lista de Empleados</h2>
           <table class="table table-hover">
             <thead>
               <tr>
+              <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Edad</th>
-                <th>Aciones</th>
+                <th>Cargo</th>
+                
               </tr>
             </thead>
             <tbody>
               {Alumnos.map((Alumno) => (
                 <tr key={Alumno.id}>
+                  <td>{Alumno.identificacion}</td>
                   <td>{Alumno.nombre}</td>
                   <td>{Alumno.apellido}</td>
-                  <td>{Alumno.edad}</td>
+                  <td>{Alumno.cargo}</td>
                   <td>
                     <button className="btn btn-primary" onClick={() => setCurrentId(Alumno.id)}>Editar</button>
                     &nbsp;
