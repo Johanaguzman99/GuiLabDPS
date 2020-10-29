@@ -54,7 +54,7 @@ const Alumnos = () => {
   return (
     <>    
       <div className="col-md-4 p-2">
-        <h2>Agregar Alumnos</h2>
+        <h2>AGREGAR EMPLEADO</h2>
         <AlumnosForm {...{ addOrEditAlumno, currentId, Alumnos }} />
       </div>
 
